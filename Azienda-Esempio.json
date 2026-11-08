@@ -1,0 +1,223 @@
+{
+  "schema": 2,
+  "document": "Analisi dei rischi ICT · v1.0 R02",
+  "company": "Azienda Esempio Srl",
+  "profile": {
+    "name": "Azienda Esempio Srl",
+    "vat": "01234567890",
+    "address": "Via Roma 1, 20100 Milano",
+    "sector": "62.01 - Produzione di software",
+    "document": "Analisi dei rischi ICT · v1.0 R02",
+    "notes": "Dati di esempio anonimi per test.",
+    "logoDataUrl": null
+  },
+  "threshold": "Medio Basso",
+  "thresholdEuro": 5000,
+  "owners": [
+    {
+      "id": "own-001",
+      "name": "ICT",
+      "role": "Responsabile sistemi"
+    },
+    {
+      "id": "own-002",
+      "name": "Amministrazione",
+      "role": "Responsabile contabilità"
+    },
+    {
+      "id": "own-003",
+      "name": "Direzione",
+      "role": "Management"
+    },
+    {
+      "id": "own-004",
+      "name": "MSP",
+      "role": "Fornitore esterno"
+    },
+    {
+      "id": "own-005",
+      "name": "Produzione",
+      "role": "Responsabile operativo"
+    }
+  ],
+  "perimeters": [
+    {
+      "id": "sis-01",
+      "name": "ERP"
+    },
+    {
+      "id": "sis-02",
+      "name": "Posta elettronica"
+    },
+    {
+      "id": "sis-03",
+      "name": "Infrastruttura di rete"
+    }
+  ],
+  "assets": [],
+  "systems": [
+    {
+      "id": "sis-01",
+      "code": "SIS-01",
+      "name": "ERP",
+      "owner": "ICT",
+      "inAnalysis": true,
+      "subsystems": [
+        {
+          "id": "sub-01",
+          "code": "SIS-01-01",
+          "name": "Modulo contabile"
+        },
+        {
+          "id": "sub-02",
+          "code": "SIS-01-02",
+          "name": "Modulo magazzino"
+        }
+      ]
+    },
+    {
+      "id": "sis-02",
+      "code": "SIS-02",
+      "name": "Posta elettronica",
+      "owner": "MSP",
+      "inAnalysis": true,
+      "subsystems": [
+        {
+          "id": "sub-03",
+          "code": "SIS-02-01",
+          "name": "Caselle utente"
+        },
+        {
+          "id": "sub-04",
+          "code": "SIS-02-02",
+          "name": "Archivio"
+        }
+      ]
+    },
+    {
+      "id": "sis-03",
+      "code": "SIS-03",
+      "name": "Infrastruttura di rete",
+      "owner": "MSP",
+      "inAnalysis": true,
+      "subsystems": [
+        {
+          "id": "sub-05",
+          "code": "SIS-03-01",
+          "name": "Firewall"
+        },
+        {
+          "id": "sub-06",
+          "code": "SIS-03-02",
+          "name": "Switch"
+        }
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "id": "prc-01",
+      "code": "PRC-01",
+      "description": "Fatturazione e contabilità",
+      "owner": "Amministrazione",
+      "systemIds": [
+        "sis-01",
+        "sis-02"
+      ],
+      "rto": "8",
+      "rpo": "24",
+      "notes": "Processo critico per la chiusura mensile.",
+      "probability": 2,
+      "impact": 3,
+      "euroPerDay": 8000
+    },
+    {
+      "id": "prc-02",
+      "code": "PRC-02",
+      "description": "Gestione ordini",
+      "owner": "Produzione",
+      "systemIds": [
+        "sis-01",
+        "sis-03"
+      ],
+      "rto": "4",
+      "rpo": "8",
+      "notes": "",
+      "probability": 3,
+      "impact": 4,
+      "euroPerDay": 12000
+    }
+  ],
+  "answers": {
+    "sis-01:1": {
+      "applicable": true,
+      "probability": 2,
+      "confidentiality": true,
+      "integrity": true,
+      "availability": true,
+      "impact": 3,
+      "controlFamily": "Gestione degli asset",
+      "controlMeasure": "Inventario hardware e software",
+      "controlIds": [
+        "1.1",
+        "1.2"
+      ],
+      "controlNotes": "Inventario aggiornato annualmente.",
+      "effectiveness": "adeguato",
+      "action": "",
+      "actionDetail": "",
+      "priority": "",
+      "owner": "",
+      "due": "",
+      "status": ""
+    },
+    "sis-01:4": {
+      "applicable": true,
+      "probability": 3,
+      "confidentiality": false,
+      "integrity": false,
+      "availability": true,
+      "impact": 4,
+      "controlFamily": "Recupero dei dati",
+      "controlMeasure": "Backup automatici e test di ripristino",
+      "controlIds": [
+        "11.1",
+        "11.2",
+        "11.5"
+      ],
+      "controlNotes": "Backup giornaliero, test trimestrale da pianificare.",
+      "effectiveness": "parziale",
+      "action": "Pianificare test di ripristino trimestrali",
+      "actionDetail": "Definire procedura e calendario con MSP.",
+      "priority": "Alta",
+      "owner": "ICT",
+      "due": "2026-12-31",
+      "status": "Pianificata"
+    },
+    "sis-02:1": {
+      "applicable": true,
+      "probability": 2,
+      "confidentiality": true,
+      "integrity": true,
+      "availability": true,
+      "impact": 3,
+      "controlFamily": "Protezione della posta elettronica",
+      "controlMeasure": "Filtri antispam e antimalware",
+      "controlIds": [
+        "9.1",
+        "9.2"
+      ],
+      "controlNotes": "",
+      "effectiveness": "adeguato",
+      "action": "",
+      "actionDetail": "",
+      "priority": "",
+      "owner": "",
+      "due": "",
+      "status": ""
+    }
+  },
+  "introDismissed": true,
+  "updatedAt": "2026-11-08T11:28:33.163605Z",
+  "exportedAt": "2026-11-08T11:28:33.163614Z"
+}

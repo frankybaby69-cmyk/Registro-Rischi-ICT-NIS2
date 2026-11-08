@@ -1,0 +1,11 @@
+{
+  "name": "registro-rischi-ict",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node avvia.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

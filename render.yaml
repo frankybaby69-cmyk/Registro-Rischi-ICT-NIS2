@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: registro-rischi-ict
+    runtime: node
+    buildCommand: ""
+    startCommand: node avvia.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

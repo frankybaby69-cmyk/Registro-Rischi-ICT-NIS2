@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Registro Rischi ICT</title>
+  <rect width="32" height="32" rx="7" fill="#1C2430"/>
+  <path fill="#C4622D" d="M16 4.4 26.4 8.6v8.2c0 5.8-4.1 10.2-10.4 12.2C9.7 27 5.6 22.6 5.6 16.8V8.6L16 4.4z"/>
+  <rect x="13.6" y="11" width="4.8" height="6.6" rx="2.1" fill="#F3EFE6"/>
+  <rect x="13.6" y="20" width="4.8" height="4.6" rx="2.2" fill="#F3EFE6"/>
+</svg>
